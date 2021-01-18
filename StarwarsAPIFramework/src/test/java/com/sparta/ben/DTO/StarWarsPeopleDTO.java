@@ -39,252 +39,285 @@ import com.sparta.ben.Framework.Utility.URLChanger;
 
     public StarWarsPeopleDTO(){}
 
-            @JsonProperty("name")
-            private String name;
-            @JsonProperty("height")
-            private String height;
-            @JsonProperty("mass")
-            private String mass;
-            @JsonProperty("hair_color")
-            private String hairColor;
-            @JsonProperty("skin_color")
-            private String skinColor;
-            @JsonProperty("eye_color")
-            private String eyeColor;
-            @JsonProperty("birth_year")
-            private String birthYear;
-            @JsonProperty("gender")
-            private String gender;
-            @JsonProperty("homeworld")
-            private String homeworld;
-            @JsonProperty("films")
-            private List<String> films = null;
-            @JsonProperty("species")
-            private List<Object> species = null;
-            @JsonProperty("vehicles")
-            private List<String> vehicles = null;
-            @JsonProperty("starships")
-            private List<String> starships = null;
-            @JsonProperty("created")
-            private String created;
-            @JsonProperty("edited")
-            private String edited;
-            @JsonProperty("url")
-            private String url;
-            @JsonIgnore
-            private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-            @JsonProperty("name")
-            public String getName() {
-                return name;
-            }
-            private List<String> starshipNames;
+    @JsonProperty("name")
+    private String name;
+    @JsonProperty("height")
+    private String height;
+    @JsonProperty("mass")
+    private String mass;
+    @JsonProperty("hair_color")
+    private String hairColor;
+    @JsonProperty("skin_color")
+    private String skinColor;
+    @JsonProperty("eye_color")
+    private String eyeColor;
+    @JsonProperty("birth_year")
+    private String birthYear;
+    @JsonProperty("gender")
+    private String gender;
+    @JsonProperty("homeworld")
+    private String homeworld = null;
+    @JsonProperty("films")
+    private List<String> films = null;
+    @JsonProperty("species")
+    private List<String> species = null;
+    @JsonProperty("vehicles")
+    private List<String> vehicles = null;
+    @JsonProperty("starships")
+    private List<String> starships = null;
+    @JsonProperty("created")
+    private String created;
+    @JsonProperty("edited")
+    private String edited;
+    @JsonProperty("url")
+    private String url;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    @JsonProperty("name")
+    public String getName() {
+        return name;
+    }
+    private List<String> starshipNames;
 
     private List<String> vehicleNames;
 
-            @JsonProperty("name")
-            public void setName(String name) {
-                this.name = name;
-            }
+    private List<String> filmNames;
 
-            @JsonProperty("height")
-            public String getHeight() {
-                return height;
-            }
+    private String homeworldName;
 
-            @JsonProperty("height")
-            public void setHeight(String height) {
-                this.height = height;
-            }
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
+    }
 
-            @JsonProperty("mass")
-            public String getMass() {
-                return mass;
-            }
+    @JsonProperty("height")
+    public String getHeight() {
+        return height;
+    }
 
-            @JsonProperty("mass")
-            public void setMass(String mass) {
-                this.mass = mass;
-            }
+    @JsonProperty("height")
+    public void setHeight(String height) {
+        this.height = height;
+    }
 
-            @JsonProperty("hair_color")
-            public String getHairColor() {
-                return hairColor;
-            }
+    @JsonProperty("mass")
+    public String getMass() {
+        return mass;
+    }
 
-            @JsonProperty("hair_color")
-            public void setHairColor(String hairColor) {
-                this.hairColor = hairColor;
-            }
+    @JsonProperty("mass")
+    public void setMass(String mass) {
+        this.mass = mass;
+    }
 
-            @JsonProperty("skin_color")
-            public String getSkinColor() {
-                return skinColor;
-            }
+    @JsonProperty("hair_color")
+    public String getHairColor() {
+        return hairColor;
+    }
 
-            @JsonProperty("skin_color")
-            public void setSkinColor(String skinColor) {
-                this.skinColor = skinColor;
-            }
+    @JsonProperty("hair_color")
+    public void setHairColor(String hairColor) {
+        this.hairColor = hairColor;
+    }
 
-            @JsonProperty("eye_color")
-            public String getEyeColor() {
-                return eyeColor;
-            }
+    @JsonProperty("skin_color")
+    public String getSkinColor() {
+        return skinColor;
+    }
 
-            @JsonProperty("eye_color")
-            public void setEyeColor(String eyeColor) {
-                this.eyeColor = eyeColor;
-            }
+    @JsonProperty("skin_color")
+    public void setSkinColor(String skinColor) {
+        this.skinColor = skinColor;
+    }
 
-            @JsonProperty("birth_year")
-            public String getBirthYear() {
-                return birthYear;
-            }
+    @JsonProperty("eye_color")
+    public String getEyeColor() {
+        return eyeColor;
+    }
 
-            @JsonProperty("birth_year")
-            public void setBirthYear(String birthYear) {
-                this.birthYear = birthYear;
-            }
+    @JsonProperty("eye_color")
+    public void setEyeColor(String eyeColor) {
+        this.eyeColor = eyeColor;
+    }
 
-            @JsonProperty("gender")
-            public String getGender() {
-                return gender;
-            }
+    @JsonProperty("birth_year")
+    public String getBirthYear() {
+        return birthYear;
+    }
 
-            @JsonProperty("gender")
-            public void setGender(String gender) {
-                this.gender = gender;
-            }
+    @JsonProperty("birth_year")
+    public void setBirthYear(String birthYear) {
+        this.birthYear = birthYear;
+    }
 
-            @JsonProperty("homeworld")
-            public String getHomeworld() {
-                return homeworld;
-            }
+    @JsonProperty("gender")
+    public String getGender() {
+        return gender;
+    }
 
-            @JsonProperty("homeworld")
-            public void setHomeworld(String homeworld) {
-                this.homeworld = homeworld;
-            }
+    @JsonProperty("gender")
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-            @JsonProperty("films")
-            public List<String> getFilms() {
-                return films;
-            }
+    @JsonProperty("homeworld")
+    public String getHomeworld() {
+        return homeworld;
+    }
 
-            @JsonProperty("films")
-            public void setFilms(List<String> films) {
-                this.films = films;
-            }
+    @JsonProperty("homeworld")
+    public void setHomeworld(String homeworld) {
+        this.homeworld = homeworld;
+    }
 
-            @JsonProperty("species")
-            public List<Object> getSpecies() {
-                return species;
-            }
+    @JsonProperty("films")
+    public List<String> getFilms() {
+        return films;
+    }
 
-            @JsonProperty("species")
-            public void setSpecies(List<Object> species) {
-                this.species = species;
-            }
+    @JsonProperty("films")
+    public void setFilms(List<String> films) {
+        this.films = films;
+    }
 
-            @JsonProperty("vehicles")
-            public List<String> getVehicles() {
-                return vehicles;
-            }
+    @JsonProperty("species")
+    public List<String> getSpecies() {
+        return species;
+    }
 
-            @JsonProperty("vehicles")
-            public void setVehicles(List<String> vehicles) {
-                this.vehicles = vehicles;
-            }
+    @JsonProperty("species")
+    public void setSpecies(List<String> species) {
+        this.species = species;
+    }
 
-            public int getNumberOfVehicles(){return vehicles.size();}
+    @JsonProperty("vehicles")
+    public List<String> getVehicles() {
+        return vehicles;
+    }
 
-            @JsonProperty("starships")
-            public List<String> getStarships() {
-                return starships;
-            }
+    @JsonProperty("vehicles")
+    public void setVehicles(List<String> vehicles) {
+        this.vehicles = vehicles;
+    }
 
-            @JsonProperty("starships")
-            public void setStarships(List<String> starships) {
-                this.starships = starships;
-            }
+    public int getNumberOfVehicles(){return vehicles.size();}
 
-            @JsonProperty("created")
-            public String getCreated() {
-                return created;
-            }
+    @JsonProperty("starships")
+    public List<String> getStarships() {
+        return starships;
+    }
 
-            @JsonProperty("created")
-            public void setCreated(String created) {
-                this.created = created;
-            }
+    @JsonProperty("starships")
+    public void setStarships(List<String> starships) {
+        this.starships = starships;
+    }
 
-            @JsonProperty("edited")
-            public String getEdited() {
-                return edited;
-            }
+    @JsonProperty("created")
+    public String getCreated() {
+        return created;
+    }
 
-            @JsonProperty("edited")
-            public void setEdited(String edited) {
-                this.edited = edited;
-            }
+    @JsonProperty("created")
+    public void setCreated(String created) {
+        this.created = created;
+    }
 
-            @JsonProperty("url")
-            public String getUrl() {
-                return url;
-            }
+    @JsonProperty("edited")
+    public String getEdited() {
+        return edited;
+    }
 
-            @JsonProperty("url")
-            public void setUrl(String url) {
-                this.url = URLChanger.URLChanger(url);
+    @JsonProperty("edited")
+    public void setEdited(String edited) {
+        this.edited = edited;
+    }
 
-            }
+    @JsonProperty("url")
+    public String getUrl() {
+        return url;
+    }
 
-            @JsonAnyGetter
-            public Map<String, Object> getAdditionalProperties() {
-                return this.additionalProperties;
-            }
+    @JsonProperty("url")
+    public void setUrl(String url) {
+        this.url = URLChanger.URLChanger(url);
 
-            @JsonAnySetter
-            public void setAdditionalProperty(String name, Object value) {
-                this.additionalProperties.put(name, value);
-            }
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
 
+    public List<String> getStarshipNames() {
+        setStarshipNames(starships);
+        return starshipNames;
+    }
 
+    public void setStarshipNames(List<String> starships) {
+        StarWarsStarshipsDTO starWarsDTO;
+        List<String> starshipsNameList = new ArrayList<>();
+        for (String starship : starships) {
+            starship = URLChanger.URLChanger(starship);
+            starWarsDTO = (StarWarsStarshipsDTO) Injector.injectDTOURL(starship, "starships");
+            String shipName = starWarsDTO.getName();
+            starshipsNameList.add(shipName);
+        }
+        starshipNames = starshipsNameList;
+    }
 
-            public List<String> getStarshipNames() {
-                setStarshipNames(starships);
-                return starshipNames;
-            }
+    public List<String> getVehicleNames() {
+        setVehicleNames(vehicles);
+        return vehicleNames;
+    }
 
-            public void setStarshipNames(List<String> starships) {
-                StarWarsStarshipsDTO starWarsDTO;
-                List<String> starshipsNameList = new ArrayList<>();
-                for (String starship : starships) {
-                    starship = URLChanger.URLChanger(starship);
-                    starWarsDTO = (StarWarsStarshipsDTO) Injector.injectDTOURL(starship, "starships");
-                    String shipName = starWarsDTO.getName();
-                    starshipsNameList.add(shipName);
-                }
-                starshipNames = starshipsNameList;
-            }
+    public void setVehicleNames(List<String> vehicles) {
+        StarWarsVehiclesDTO starWarsDTO;
+        List<String> vehiclesNameList = new ArrayList<>();
+        for (String vehicle : vehicles) {
+            vehicle = URLChanger.URLChanger(vehicle);
+            starWarsDTO = (StarWarsVehiclesDTO) Injector.injectDTOURL(vehicle, "vehicles");
+            String shipName = starWarsDTO.getName();
+            vehiclesNameList.add(shipName);
+        }
+        vehicleNames = vehiclesNameList;
+    }
 
-            public List<String> getVehicleNames() {
-                setVehicleNames(vehicles);
-                return vehicleNames;
-            }
+    public List<String> getFilmNames() {
+        setFilmNames(films);
+        return filmNames;
+    }
 
-            public void setVehicleNames(List<String> vehicles) {
-                StarWarsVehiclesDTO starWarsDTO;
-                List<String> vehiclesNameList = new ArrayList<>();
-                for (String vehicle : vehicles) {
-                    vehicle = URLChanger.URLChanger(vehicle);
-                    starWarsDTO = (StarWarsVehiclesDTO) Injector.injectDTOURL(vehicle, "vehicles");
-                    String shipName = starWarsDTO.getName();
-                    vehiclesNameList.add(shipName);
-                }
-                vehicleNames = vehiclesNameList;
-            }
+    public void setFilmNames(List<String> films) {
+        StarWarsFilmsDTO starWarsDTO;
+        List<String> filmNameList = new ArrayList<>();
+        for (String film : films) {
+            film = URLChanger.URLChanger(film);
+            starWarsDTO = (StarWarsFilmsDTO) Injector.injectDTOURL(film, "films");
+            String filmName = starWarsDTO.getTitle();
+            filmNameList.add(filmName);
+        }
+        filmNames = filmNameList;
+    }
+
+    public String getHomeworldName() {
+        setHomeworldName(homeworld);
+        return homeworldName;
+    }
+
+    public void setHomeworldName(String homeworld) {
+        StarWarsPlanetsDTO starWarsDTO;
+        homeworld = URLChanger.URLChanger(homeworld);
+        starWarsDTO = (StarWarsPlanetsDTO) Injector.injectDTOURL(homeworld, "planets");
+        String planetName = starWarsDTO.getName();
+
+        homeworldName = planetName;
+    }
 
 
 }

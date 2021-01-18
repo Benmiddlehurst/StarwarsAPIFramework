@@ -1,5 +1,6 @@
 package com.sparta.ben.DTO;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.sparta.ben.Framework.Injector;
 import com.sparta.ben.Framework.Utility.URLChanger;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -263,6 +265,25 @@ public class StarWarsStarshipsDTO extends StarWarsDTO {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    private List<String> filmNames;
+
+    public List<String> getFilmNames() {
+        setFilmNames(films);
+        return filmNames;
+    }
+
+    public void setFilmNames(List<String> films) {
+        StarWarsFilmsDTO starWarsDTO;
+        List<String> filmNameList = new ArrayList<>();
+        for (String film : films) {
+            film = URLChanger.URLChanger(film);
+            starWarsDTO = (StarWarsFilmsDTO) Injector.injectDTOURL(film, "films");
+            String filmName = starWarsDTO.getTitle();
+            filmNameList.add(filmName);
+        }
+        filmNames = filmNameList;
     }
 
 }

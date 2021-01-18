@@ -80,7 +80,7 @@ public class StringTests {
         Assertions.assertNotEquals(0, starWarsDTO.getEyeColor().length());
         Assertions.assertNotEquals(0, starWarsDTO.getBirthYear().length());
         Assertions.assertNotEquals(0, starWarsDTO.getGender().length());
-        Assertions.assertNotEquals(0, starWarsDTO.getHomeworld().length());
+        Assertions.assertNotEquals(0, starWarsDTO.getHomeworld().toString().length());
         Assertions.assertNotEquals(0, starWarsDTO.getFilms().toString().length());
         Assertions.assertNotEquals(0, starWarsDTO.getSpecies().toString().length());
         Assertions.assertNotEquals(0, starWarsDTO.getVehicles().toString().length());

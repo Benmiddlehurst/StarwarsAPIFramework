@@ -10,40 +10,35 @@ public class StarWarsDTO {
 
     public void starWarsDTO(){}
 
-    private List<String> listOfNames;
-
-    public List<String> getListOfNames() {
-        return listOfNames;
-    }
-
-    public StarWarsDTO setListOfNames(String url) {
-        String element = "";
-        String mydata = "some string with 'the data i want' inside";
-        Pattern pattern = Pattern.compile("/(.*?)/");
-        Matcher matcher = pattern.matcher(element);
-
-        if (element.equals("people")) {
-            StarWarsPeopleDTO dto;
-            dto = (StarWarsPeopleDTO) Injector.injectDTOURL(url, element);
-            return dto;
-        } else if (element.equals("films")) {
-            StarWarsFilmsDTO dto;
-            dto = (StarWarsFilmsDTO) Injector.injectDTOURL(url, element);
-            return dto;
-        } else if (element.equals("planets")) {
-            StarWarsPlanetsDTO dto;
-            dto = (StarWarsPlanetsDTO) Injector.injectDTOURL(url, element);
-            return dto;
-        } else if (element.equals("starships")) {
-            StarWarsStarshipsDTO dto;
-            dto = (StarWarsStarshipsDTO) Injector.injectDTOURL(url, element);
-            return dto;
-        } else if (element.equals("vehicles")) {
-            StarWarsVehiclesDTO dto;
-            dto = (StarWarsVehiclesDTO) Injector.injectDTOURL(url, element);
-            return dto;
-        }
-        return null;
-    }
+//    private List<String> listOfNames;
+//
+//    public List<String> getListOfNames() {
+//        return listOfNames;
+//    }
+//
+//    public StarWarsDTO setListOfNames(String url, String endpoint) {
+//        if (endpoint.equals("people")) {
+//            StarWarsPeopleDTO dto;
+//            dto = (StarWarsPeopleDTO) Injector.injectDTOURL(url, endpoint);
+//            return dto;
+//        } else if (endpoint.equals("films")) {
+//            StarWarsFilmsDTO dto;
+//            dto = (StarWarsFilmsDTO) Injector.injectDTOURL(url, endpoint);
+//            return dto;
+//        } else if (endpoint.equals("planets")) {
+//            StarWarsPlanetsDTO dto;
+//            dto = (StarWarsPlanetsDTO) Injector.injectDTOURL(url, endpoint);
+//            return dto;
+//        } else if (endpoint.equals("starships")) {
+//            StarWarsStarshipsDTO dto;
+//            dto = (StarWarsStarshipsDTO) Injector.injectDTOURL(url, endpoint);
+//            return dto;
+//        } else if (endpoint.equals("vehicles")) {
+//            StarWarsVehiclesDTO dto;
+//            dto = (StarWarsVehiclesDTO) Injector.injectDTOURL(url, endpoint);
+//            return dto;
+//        }
+//        return null;
+//    }
 
 }

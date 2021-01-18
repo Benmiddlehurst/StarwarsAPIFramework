@@ -1,5 +1,6 @@
 package com.sparta.ben.DTO;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.sparta.ben.Framework.Injector;
 import com.sparta.ben.Framework.Utility.URLChanger;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -213,5 +215,78 @@ import com.sparta.ben.Framework.Utility.URLChanger;
         public void setAdditionalProperty(String name, Object value) {
             this.additionalProperties.put(name, value);
         }
+
+
+        private List<String> vehicleNames;
+        private List<String> starshipNames;
+        private List<String> characterNames;
+        private List<String> planetNames;
+
+    public List<String> getVehicleNames() {
+        setVehicleNames(vehicles);
+        return vehicleNames;
+    }
+
+    public void setVehicleNames(List<String> vehicles) {
+        StarWarsVehiclesDTO starWarsDTO;
+        List<String> vehiclesNameList = new ArrayList<>();
+        for (String vehicle : vehicles) {
+            vehicle = URLChanger.URLChanger(vehicle);
+            starWarsDTO = (StarWarsVehiclesDTO) Injector.injectDTOURL(vehicle, "vehicles");
+            String shipName = starWarsDTO.getName();
+            vehiclesNameList.add(shipName);
+        }
+        vehicleNames = vehiclesNameList;
+    }
+
+    public List<String> getCharacterNames() {
+        setCharacterNames(characters);
+        return characterNames;
+    }
+
+    public void setCharacterNames(List<String> characters) {
+        StarWarsPeopleDTO starWarsDTO;
+        List<String> characterNameList = new ArrayList<>();
+        for (String character : characters) {
+            character = URLChanger.URLChanger(character);
+            starWarsDTO = (StarWarsPeopleDTO) Injector.injectDTOURL(character, "people");
+            String characterName = starWarsDTO.getName();
+            characterNameList.add(characterName);
+        }
+        characterNames = characterNameList;
+    }
+
+    public List<String> getPlanetNames() {
+        setPlanetNames(planets);
+        return planetNames;
+    }
+
+    public void setPlanetNames(List<String> planets) {
+        StarWarsPlanetsDTO starWarsDTO;
+        List<String> planetList = new ArrayList<>();
+        for (String planet : planets) {
+            planet = URLChanger.URLChanger(planet);
+            starWarsDTO = (StarWarsPlanetsDTO) Injector.injectDTOURL(planet, "planets");
+            String planetName = starWarsDTO.getName();
+            planetList.add(planetName);
+        }
+        planetNames = planetList;
+    }
+    public void setStarshipNames(List<String> starships) {
+        StarWarsStarshipsDTO starWarsDTO;
+        List<String> starshipsNameList = new ArrayList<>();
+        for (String starship : starships) {
+            starship = URLChanger.URLChanger(starship);
+            starWarsDTO = (StarWarsStarshipsDTO) Injector.injectDTOURL(starship, "starships");
+            String shipName = starWarsDTO.getName();
+            starshipsNameList.add(shipName);
+        }
+        starshipNames = starshipsNameList;
+    }
+
+    public List<String> getStarshipNames() {
+        setStarshipNames(starships);
+        return starshipNames;
+    }
 
     }

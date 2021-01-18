@@ -58,7 +58,14 @@ public class FrameworkTests {
          System.out.println(requestedDTO.getStarships());
          System.out.println(requestedDTO.getStarshipNames());
          Assertions.assertEquals("[X-wing, Imperial shuttle]", requestedDTO.getStarshipNames().toString());
-
      }
+
+    @Test
+    @DisplayName("Test Film Names")
+    void testFilmNames() {
+        System.out.println(requestedDTO.getFilms());
+        System.out.println(requestedDTO.getFilmNames());
+        Assertions.assertEquals("[A New Hope, The Empire Strikes Back, Return of the Jedi, Revenge of the Sith]", requestedDTO.getFilmNames().toString());
+    }
 
 }
